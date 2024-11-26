@@ -1,0 +1,876 @@
+db.productos.insertMany([
+    ...Array.from({ length: 100 }, (_, i) => {
+        const categorias = ["Ropa", "Tecnología", "Muebles", "Deportes", "Juguetes"];
+        const nombres = [
+            "Camisa", "Pantalón", "Laptop", "Audífonos", "Mesa", "Silla", "Zapatos", "Reloj", "Bicicleta", "Libro"
+        ];
+        const descripciones = [
+            "Producto de alta calidad",
+            "Diseñado para durar",
+            "Ideal para uso diario",
+            "Nuevo y mejorado",
+            "Edición limitada"
+        ];
+
+        return {
+            nombre: `${nombres[Math.floor(Math.random() * nombres.length)]} ${i + 1}`,
+            categoria: categorias[Math.floor(Math.random() * categorias.length)],
+            precio: parseFloat((Math.random() * 900 + 10).toFixed(2)), // Precios entre 10 y 910
+            stock: Math.floor(Math.random() * 200) + 1, // Stock entre 1 y 200
+            descripcion: descripciones[Math.floor(Math.random() * descripciones.length)],
+            calificacion: parseFloat((Math.random() * 2 + 3).toFixed(1)) // Calificación entre 3.0 y 5.0
+        };
+    })
+]);
+{
+    '50': ObjectId('67454b5d8ee0dfc368267373'),
+    '51': ObjectId('67454b5d8ee0dfc368267374'),
+    '52': ObjectId('67454b5d8ee0dfc368267375'),
+    '53': ObjectId('67454b5d8ee0dfc368267376'),
+    '54': ObjectId('67454b5d8ee0dfc368267377'),
+    '55': ObjectId('67454b5d8ee0dfc368267378'),
+    '56': ObjectId('67454b5d8ee0dfc368267379'),
+    '57': ObjectId('67454b5d8ee0dfc36826737a'),
+    '58': ObjectId('67454b5d8ee0dfc36826737b'),
+    '59': ObjectId('67454b5d8ee0dfc36826737c'),
+    '60': ObjectId('67454b5d8ee0dfc36826737d'),
+    '61': ObjectId('67454b5d8ee0dfc36826737e'),
+    '62': ObjectId('67454b5d8ee0dfc36826737f'),
+    '63': ObjectId('67454b5d8ee0dfc368267380'),
+    '64': ObjectId('67454b5d8ee0dfc368267381'),
+    '65': ObjectId('67454b5d8ee0dfc368267382'),
+    '66': ObjectId('67454b5d8ee0dfc368267383'),
+    '67': ObjectId('67454b5d8ee0dfc368267384'),
+    '68': ObjectId('67454b5d8ee0dfc368267385'),
+    '69': ObjectId('67454b5d8ee0dfc368267386'),
+    '70': ObjectId('67454b5d8ee0dfc368267387'),
+    '71': ObjectId('67454b5d8ee0dfc368267388'),
+    '72': ObjectId('67454b5d8ee0dfc368267389'),
+    '73': ObjectId('67454b5d8ee0dfc36826738a'),
+    '74': ObjectId('67454b5d8ee0dfc36826738b'),
+    '75': ObjectId('67454b5d8ee0dfc36826738c'),
+    '76': ObjectId('67454b5d8ee0dfc36826738d'),
+    '77': ObjectId('67454b5d8ee0dfc36826738e'),
+    '78': ObjectId('67454b5d8ee0dfc36826738f'),
+    '79': ObjectId('67454b5d8ee0dfc368267390'),
+    '80': ObjectId('67454b5d8ee0dfc368267391'),
+    '81': ObjectId('67454b5d8ee0dfc368267392'),
+    '82': ObjectId('67454b5d8ee0dfc368267393'),
+    '83': ObjectId('67454b5d8ee0dfc368267394'),
+    '84': ObjectId('67454b5d8ee0dfc368267395'),
+    '85': ObjectId('67454b5d8ee0dfc368267396'),
+    '86': ObjectId('67454b5d8ee0dfc368267397'),
+    '87': ObjectId('67454b5d8ee0dfc368267398'),
+    '88': ObjectId('67454b5d8ee0dfc368267399'),
+    '89': ObjectId('67454b5d8ee0dfc36826739a'),
+    '90': ObjectId('67454b5d8ee0dfc36826739b'),
+    '91': ObjectId('67454b5d8ee0dfc36826739c'),
+    '92': ObjectId('67454b5d8ee0dfc36826739d'),
+    '93': ObjectId('67454b5d8ee0dfc36826739e'),
+    '94': ObjectId('67454b5d8ee0dfc36826739f'),
+    '95': ObjectId('67454b5d8ee0dfc3682673a0'),
+    '96': ObjectId('67454b5d8ee0dfc3682673a1'),
+    '97': ObjectId('67454b5d8ee0dfc3682673a2'),
+    '98': ObjectId('67454b5d8ee0dfc3682673a3'),
+    '99': ObjectId('67454b5d8ee0dfc3682673a4')
+  }
+}
+db["productos"].find()
+{
+  _id: ObjectId('67454b5d8ee0dfc368267341'),
+  nombre: 'Bicicleta 1',
+  categoria: 'Deportes',
+  precio: 509.23,
+  stock: 73,
+  descripcion: 'Nuevo y mejorado',
+  calificacion: 3.4
+}
+{
+  _id: ObjectId('67454b5d8ee0dfc368267342'),
+  nombre: 'Libro 2',
+  categoria: 'Deportes',
+  precio: 727.22,
+  stock: 178,
+  descripcion: 'Ideal para uso diario',
+  calificacion: 3.4
+}
+{
+  _id: ObjectId('67454b5d8ee0dfc368267343'),
+  nombre: 'Pantalón 3',
+  categoria: 'Muebles',
+  precio: 167.57,
+  stock: 45,
+  descripcion: 'Edición limitada',
+  calificacion: 3.6
+}
+{
+  _id: ObjectId('67454b5d8ee0dfc368267344'),
+  nombre: 'Libro 4',
+  categoria: 'Ropa',
+  precio: 41.67,
+  stock: 183,
+  descripcion: 'Nuevo y mejorado',
+  calificacion: 3.3
+}
+{
+  _id: ObjectId('67454b5d8ee0dfc368267345'),
+  nombre: 'Bicicleta 5',
+  categoria: 'Juguetes',
+  precio: 195.09,
+  stock: 110,
+  descripcion: 'Ideal para uso diario',
+  calificacion: 3.9
+}
+{
+  _id: ObjectId('67454b5d8ee0dfc368267346'),
+  nombre: 'Bicicleta 6',
+  categoria: 'Tecnología',
+  precio: 830.32,
+  stock: 31,
+  descripcion: 'Nuevo y mejorado',
+  calificacion: 3.3
+}
+{
+  _id: ObjectId('67454b5d8ee0dfc368267347'),
+  nombre: 'Camisa 7',
+  categoria: 'Muebles',
+  precio: 207.68,
+  stock: 110,
+  descripcion: 'Diseñado para durar',
+  calificacion: 3.9
+}
+{
+  _id: ObjectId('67454b5d8ee0dfc368267348'),
+  nombre: 'Silla 8',
+  categoria: 'Deportes',
+  precio: 190.22,
+  stock: 139,
+  descripcion: 'Ideal para uso diario',
+  calificacion: 3.4
+}
+{
+  _id: ObjectId('67454b5d8ee0dfc368267349'),
+  nombre: 'Audífonos 9',
+  categoria: 'Tecnología',
+  precio: 298.72,
+  stock: 175,
+  descripcion: 'Producto de alta calidad',
+  calificacion: 3.4
+}
+{
+  _id: ObjectId('67454b5d8ee0dfc36826734a'),
+  nombre: 'Camisa 10',
+  categoria: 'Juguetes',
+  precio: 899.36,
+  stock: 147,
+  descripcion: 'Edición limitada',
+  calificacion: 3.8
+}
+{
+  _id: ObjectId('67454b5d8ee0dfc36826734b'),
+  nombre: 'Silla 11',
+  categoria: 'Juguetes',
+  precio: 165.08,
+  stock: 41,
+  descripcion: 'Nuevo y mejorado',
+  calificacion: 4.4
+}
+{
+  _id: ObjectId('67454b5d8ee0dfc36826734c'),
+  nombre: 'Laptop 12',
+  categoria: 'Ropa',
+  precio: 504.81,
+  stock: 115,
+  descripcion: 'Nuevo y mejorado',
+  calificacion: 3.1
+}
+{
+  _id: ObjectId('67454b5d8ee0dfc36826734d'),
+  nombre: 'Laptop 13',
+  categoria: 'Deportes',
+  precio: 257.8,
+  stock: 47,
+  descripcion: 'Producto de alta calidad',
+  calificacion: 4.2
+}
+{
+  _id: ObjectId('67454b5d8ee0dfc36826734e'),
+  nombre: 'Camisa 14',
+  categoria: 'Ropa',
+  precio: 734.86,
+  stock: 142,
+  descripcion: 'Producto de alta calidad',
+  calificacion: 3.9
+}
+{
+  _id: ObjectId('67454b5d8ee0dfc36826734f'),
+  nombre: 'Pantalón 15',
+  categoria: 'Muebles',
+  precio: 48.31,
+  stock: 126,
+  descripcion: 'Producto de alta calidad',
+  calificacion: 3.4
+}
+{
+  _id: ObjectId('67454b5d8ee0dfc368267350'),
+  nombre: 'Libro 16',
+  categoria: 'Tecnología',
+  precio: 402.77,
+  stock: 55,
+  descripcion: 'Nuevo y mejorado',
+  calificacion: 4.9
+}
+{
+  _id: ObjectId('67454b5d8ee0dfc368267351'),
+  nombre: 'Silla 17',
+  categoria: 'Juguetes',
+  precio: 883.14,
+  stock: 101,
+  descripcion: 'Diseñado para durar',
+  calificacion: 4.7
+}
+{
+  _id: ObjectId('67454b5d8ee0dfc368267352'),
+  nombre: 'Audífonos 18',
+  categoria: 'Ropa',
+  precio: 61.13,
+  stock: 191,
+  descripcion: 'Ideal para uso diario',
+  calificacion: 4.4
+}
+{
+  _id: ObjectId('67454b5d8ee0dfc368267353'),
+  nombre: 'Mesa 19',
+  categoria: 'Ropa',
+  precio: 43.27,
+  stock: 8,
+  descripcion: 'Nuevo y mejorado',
+  calificacion: 4.7
+}
+{
+  _id: ObjectId('67454b5d8ee0dfc368267354'),
+  nombre: 'Zapatos 20',
+  categoria: 'Muebles',
+  precio: 38.5,
+  stock: 83,
+  descripcion: 'Edición limitada',
+  calificacion: 3.5
+}
+Type "it" for more
+db.productos.insertOne({
+    "nombre": "Escritorio Minimalista",
+    "categoria": "Muebles",
+    "precio": 199.99,
+    "stock": 20,
+    "descripcion": "Escritorio de madera minimalista para oficina",
+    "calificacion": 4.7
+});
+{
+  acknowledged: true,
+  insertedId: ObjectId('67454d8a8ee0dfc3682673a5')
+}
+db.productos.insertMany([
+    {
+        "nombre": "Lámpara LED",
+        "categoria": "Hogar",
+        "precio": 29.99,
+        "stock": 50,
+        "descripcion": "Lámpara LED con diseño moderno",
+        "calificacion": 4.3
+    },
+    {
+        "nombre": "Auriculares Gaming",
+        "categoria": "Tecnología",
+        "precio": 89.99,
+        "stock": 40,
+        "descripcion": "Auriculares con sonido envolvente",
+        "calificacion": 4.5
+    }
+]);
+{
+  acknowledged: true,
+  insertedIds: {
+    '0': ObjectId('67454e058ee0dfc3682673a6'),
+    '1': ObjectId('67454e058ee0dfc3682673a7')
+  }
+}
+db.productos.find();
+
+{
+  _id: ObjectId('67454b5d8ee0dfc368267341'),
+  nombre: 'Bicicleta 1',
+  categoria: 'Deportes',
+  precio: 509.23,
+  stock: 73,
+  descripcion: 'Nuevo y mejorado',
+  calificacion: 3.4
+}
+{
+  _id: ObjectId('67454b5d8ee0dfc368267342'),
+  nombre: 'Libro 2',
+  categoria: 'Deportes',
+  precio: 727.22,
+  stock: 178,
+  descripcion: 'Ideal para uso diario',
+  calificacion: 3.4
+}
+{
+  _id: ObjectId('67454b5d8ee0dfc368267343'),
+  nombre: 'Pantalón 3',
+  categoria: 'Muebles',
+  precio: 167.57,
+  stock: 45,
+  descripcion: 'Edición limitada',
+  calificacion: 3.6
+}
+{
+  _id: ObjectId('67454b5d8ee0dfc368267344'),
+  nombre: 'Libro 4',
+  categoria: 'Ropa',
+  precio: 41.67,
+  stock: 183,
+  descripcion: 'Nuevo y mejorado',
+  calificacion: 3.3
+}
+{
+  _id: ObjectId('67454b5d8ee0dfc368267345'),
+  nombre: 'Bicicleta 5',
+  categoria: 'Juguetes',
+  precio: 195.09,
+  stock: 110,
+  descripcion: 'Ideal para uso diario',
+  calificacion: 3.9
+}
+{
+  _id: ObjectId('67454b5d8ee0dfc368267346'),
+  nombre: 'Bicicleta 6',
+  categoria: 'Tecnología',
+  precio: 830.32,
+  stock: 31,
+  descripcion: 'Nuevo y mejorado',
+  calificacion: 3.3
+}
+{
+  _id: ObjectId('67454b5d8ee0dfc368267347'),
+  nombre: 'Camisa 7',
+  categoria: 'Muebles',
+  precio: 207.68,
+  stock: 110,
+  descripcion: 'Diseñado para durar',
+  calificacion: 3.9
+}
+{
+  _id: ObjectId('67454b5d8ee0dfc368267348'),
+  nombre: 'Silla 8',
+  categoria: 'Deportes',
+  precio: 190.22,
+  stock: 139,
+  descripcion: 'Ideal para uso diario',
+  calificacion: 3.4
+}
+{
+  _id: ObjectId('67454b5d8ee0dfc368267349'),
+  nombre: 'Audífonos 9',
+  categoria: 'Tecnología',
+  precio: 298.72,
+  stock: 175,
+  descripcion: 'Producto de alta calidad',
+  calificacion: 3.4
+}
+{
+  _id: ObjectId('67454b5d8ee0dfc36826734a'),
+  nombre: 'Camisa 10',
+  categoria: 'Juguetes',
+  precio: 899.36,
+  stock: 147,
+  descripcion: 'Edición limitada',
+  calificacion: 3.8
+}
+{
+  _id: ObjectId('67454b5d8ee0dfc36826734b'),
+  nombre: 'Silla 11',
+  categoria: 'Juguetes',
+  precio: 165.08,
+  stock: 41,
+  descripcion: 'Nuevo y mejorado',
+  calificacion: 4.4
+}
+{
+  _id: ObjectId('67454b5d8ee0dfc36826734c'),
+  nombre: 'Laptop 12',
+  categoria: 'Ropa',
+  precio: 504.81,
+  stock: 115,
+  descripcion: 'Nuevo y mejorado',
+  calificacion: 3.1
+}
+{
+  _id: ObjectId('67454b5d8ee0dfc36826734d'),
+  nombre: 'Laptop 13',
+  categoria: 'Deportes',
+  precio: 257.8,
+  stock: 47,
+  descripcion: 'Producto de alta calidad',
+  calificacion: 4.2
+}
+{
+  _id: ObjectId('67454b5d8ee0dfc36826734e'),
+  nombre: 'Camisa 14',
+  categoria: 'Ropa',
+  precio: 734.86,
+  stock: 142,
+  descripcion: 'Producto de alta calidad',
+  calificacion: 3.9
+}
+{
+  _id: ObjectId('67454b5d8ee0dfc36826734f'),
+  nombre: 'Pantalón 15',
+  categoria: 'Muebles',
+  precio: 48.31,
+  stock: 126,
+  descripcion: 'Producto de alta calidad',
+  calificacion: 3.4
+}
+{
+  _id: ObjectId('67454b5d8ee0dfc368267350'),
+  nombre: 'Libro 16',
+  categoria: 'Tecnología',
+  precio: 402.77,
+  stock: 55,
+  descripcion: 'Nuevo y mejorado',
+  calificacion: 4.9
+}
+{
+  _id: ObjectId('67454b5d8ee0dfc368267351'),
+  nombre: 'Silla 17',
+  categoria: 'Juguetes',
+  precio: 883.14,
+  stock: 101,
+  descripcion: 'Diseñado para durar',
+  calificacion: 4.7
+}
+{
+  _id: ObjectId('67454b5d8ee0dfc368267352'),
+  nombre: 'Audífonos 18',
+  categoria: 'Ropa',
+  precio: 61.13,
+  stock: 191,
+  descripcion: 'Ideal para uso diario',
+  calificacion: 4.4
+}
+{
+  _id: ObjectId('67454b5d8ee0dfc368267353'),
+  nombre: 'Mesa 19',
+  categoria: 'Ropa',
+  precio: 43.27,
+  stock: 8,
+  descripcion: 'Nuevo y mejorado',
+  calificacion: 4.7
+}
+{
+  _id: ObjectId('67454b5d8ee0dfc368267354'),
+  nombre: 'Zapatos 20',
+  categoria: 'Muebles',
+  precio: 38.5,
+  stock: 83,
+  descripcion: 'Edición limitada',
+  calificacion: 3.5
+}
+Type "it" for more
+db.productos.find({ "categoria": "Muebles" });
+{
+  _id: ObjectId('67454b5d8ee0dfc368267343'),
+  nombre: 'Pantalón 3',
+  categoria: 'Muebles',
+  precio: 167.57,
+  stock: 45,
+  descripcion: 'Edición limitada',
+  calificacion: 3.6
+}
+{
+  _id: ObjectId('67454b5d8ee0dfc368267347'),
+  nombre: 'Camisa 7',
+  categoria: 'Muebles',
+  precio: 207.68,
+  stock: 110,
+  descripcion: 'Diseñado para durar',
+  calificacion: 3.9
+}
+{
+  _id: ObjectId('67454b5d8ee0dfc36826734f'),
+  nombre: 'Pantalón 15',
+  categoria: 'Muebles',
+  precio: 48.31,
+  stock: 126,
+  descripcion: 'Producto de alta calidad',
+  calificacion: 3.4
+}
+{
+  _id: ObjectId('67454b5d8ee0dfc368267354'),
+  nombre: 'Zapatos 20',
+  categoria: 'Muebles',
+  precio: 38.5,
+  stock: 83,
+  descripcion: 'Edición limitada',
+  calificacion: 3.5
+}
+{
+  _id: ObjectId('67454b5d8ee0dfc368267356'),
+  nombre: 'Zapatos 22',
+  categoria: 'Muebles',
+  precio: 436.56,
+  stock: 53,
+  descripcion: 'Producto de alta calidad',
+  calificacion: 4.1
+}
+{
+  _id: ObjectId('67454b5d8ee0dfc368267363'),
+  nombre: 'Camisa 35',
+  categoria: 'Muebles',
+  precio: 125.1,
+  stock: 140,
+  descripcion: 'Ideal para uso diario',
+  calificacion: 3.2
+}
+{
+  _id: ObjectId('67454b5d8ee0dfc368267368'),
+  nombre: 'Laptop 40',
+  categoria: 'Muebles',
+  precio: 564.71,
+  stock: 44,
+  descripcion: 'Producto de alta calidad',
+  calificacion: 4.3
+}
+{
+  _id: ObjectId('67454b5d8ee0dfc368267372'),
+  nombre: 'Silla 50',
+  categoria: 'Muebles',
+  precio: 308.81,
+  stock: 157,
+  descripcion: 'Producto de alta calidad',
+  calificacion: 3.1
+}
+{
+  _id: ObjectId('67454b5d8ee0dfc368267378'),
+  nombre: 'Silla 56',
+  categoria: 'Muebles',
+  precio: 731.36,
+  stock: 45,
+  descripcion: 'Ideal para uso diario',
+  calificacion: 3.3
+}
+{
+  _id: ObjectId('67454b5d8ee0dfc368267379'),
+  nombre: 'Laptop 57',
+  categoria: 'Muebles',
+  precio: 723.35,
+  stock: 33,
+  descripcion: 'Ideal para uso diario',
+  calificacion: 5
+}
+{
+  _id: ObjectId('67454b5d8ee0dfc36826737a'),
+  nombre: 'Laptop 58',
+  categoria: 'Muebles',
+  precio: 816.83,
+  stock: 75,
+  descripcion: 'Producto de alta calidad',
+  calificacion: 4.2
+}
+{
+  _id: ObjectId('67454b5d8ee0dfc36826737d'),
+  nombre: 'Silla 61',
+  categoria: 'Muebles',
+  precio: 283.5,
+  stock: 143,
+  descripcion: 'Ideal para uso diario',
+  calificacion: 3.1
+}
+{
+  _id: ObjectId('67454b5d8ee0dfc368267389'),
+  nombre: 'Reloj 73',
+  categoria: 'Muebles',
+  precio: 112.09,
+  stock: 164,
+  descripcion: 'Ideal para uso diario',
+  calificacion: 5
+}
+{
+  _id: ObjectId('67454b5d8ee0dfc36826738c'),
+  nombre: 'Audífonos 76',
+  categoria: 'Muebles',
+  precio: 539.52,
+  stock: 123,
+  descripcion: 'Edición limitada',
+  calificacion: 5
+}
+{
+  _id: ObjectId('67454b5d8ee0dfc368267390'),
+  nombre: 'Bicicleta 80',
+  categoria: 'Muebles',
+  precio: 552.57,
+  stock: 91,
+  descripcion: 'Nuevo y mejorado',
+  calificacion: 3.6
+}
+{
+  _id: ObjectId('67454b5d8ee0dfc368267391'),
+  nombre: 'Zapatos 81',
+  categoria: 'Muebles',
+  precio: 159.26,
+  stock: 158,
+  descripcion: 'Edición limitada',
+  calificacion: 4.4
+}
+{
+  _id: ObjectId('67454b5d8ee0dfc368267394'),
+  nombre: 'Silla 84',
+  categoria: 'Muebles',
+  precio: 734.01,
+  stock: 197,
+  descripcion: 'Nuevo y mejorado',
+  calificacion: 3.5
+}
+{
+  _id: ObjectId('67454b5d8ee0dfc368267395'),
+  nombre: 'Silla 85',
+  categoria: 'Muebles',
+  precio: 459.32,
+  stock: 190,
+  descripcion: 'Nuevo y mejorado',
+  calificacion: 3
+}
+{
+  _id: ObjectId('67454b5d8ee0dfc368267398'),
+  nombre: 'Audífonos 88',
+  categoria: 'Muebles',
+  precio: 863.64,
+  stock: 66,
+  descripcion: 'Nuevo y mejorado',
+  calificacion: 3.3
+}
+{
+  _id: ObjectId('67454b5d8ee0dfc368267399'),
+  nombre: 'Mesa 89',
+  categoria: 'Muebles',
+  precio: 138.19,
+  stock: 70,
+  descripcion: 'Diseñado para durar',
+  calificacion: 4.2
+}
+Type "it" for more
+db.productos.find({ "precio": { $gt: 100 } });
+{
+  _id: ObjectId('67454b5d8ee0dfc368267341'),
+  nombre: 'Bicicleta 1',
+  categoria: 'Deportes',
+  precio: 509.23,
+  stock: 73,
+  descripcion: 'Nuevo y mejorado',
+  calificacion: 3.4
+}
+{
+  _id: ObjectId('67454b5d8ee0dfc368267342'),
+  nombre: 'Libro 2',
+  categoria: 'Deportes',
+  precio: 727.22,
+  stock: 178,
+  descripcion: 'Ideal para uso diario',
+  calificacion: 3.4
+}
+{
+  _id: ObjectId('67454b5d8ee0dfc368267343'),
+  nombre: 'Pantalón 3',
+  categoria: 'Muebles',
+  precio: 167.57,
+  stock: 45,
+  descripcion: 'Edición limitada',
+  calificacion: 3.6
+}
+{
+  _id: ObjectId('67454b5d8ee0dfc368267345'),
+  nombre: 'Bicicleta 5',
+  categoria: 'Juguetes',
+  precio: 195.09,
+  stock: 110,
+  descripcion: 'Ideal para uso diario',
+  calificacion: 3.9
+}
+{
+  _id: ObjectId('67454b5d8ee0dfc368267346'),
+  nombre: 'Bicicleta 6',
+  categoria: 'Tecnología',
+  precio: 830.32,
+  stock: 31,
+  descripcion: 'Nuevo y mejorado',
+  calificacion: 3.3
+}
+{
+  _id: ObjectId('67454b5d8ee0dfc368267347'),
+  nombre: 'Camisa 7',
+  categoria: 'Muebles',
+  precio: 207.68,
+  stock: 110,
+  descripcion: 'Diseñado para durar',
+  calificacion: 3.9
+}
+{
+  _id: ObjectId('67454b5d8ee0dfc368267348'),
+  nombre: 'Silla 8',
+  categoria: 'Deportes',
+  precio: 190.22,
+  stock: 139,
+  descripcion: 'Ideal para uso diario',
+  calificacion: 3.4
+}
+{
+  _id: ObjectId('67454b5d8ee0dfc368267349'),
+  nombre: 'Audífonos 9',
+  categoria: 'Tecnología',
+  precio: 298.72,
+  stock: 175,
+  descripcion: 'Producto de alta calidad',
+  calificacion: 3.4
+}
+{
+  _id: ObjectId('67454b5d8ee0dfc36826734a'),
+  nombre: 'Camisa 10',
+  categoria: 'Juguetes',
+  precio: 899.36,
+  stock: 147,
+  descripcion: 'Edición limitada',
+  calificacion: 3.8
+}
+{
+  _id: ObjectId('67454b5d8ee0dfc36826734b'),
+  nombre: 'Silla 11',
+  categoria: 'Juguetes',
+  precio: 165.08,
+  stock: 41,
+  descripcion: 'Nuevo y mejorado',
+  calificacion: 4.4
+}
+{
+  _id: ObjectId('67454b5d8ee0dfc36826734c'),
+  nombre: 'Laptop 12',
+  categoria: 'Ropa',
+  precio: 504.81,
+  stock: 115,
+  descripcion: 'Nuevo y mejorado',
+  calificacion: 3.1
+}
+{
+  _id: ObjectId('67454b5d8ee0dfc36826734d'),
+  nombre: 'Laptop 13',
+  categoria: 'Deportes',
+  precio: 257.8,
+  stock: 47,
+  descripcion: 'Producto de alta calidad',
+  calificacion: 4.2
+}
+{
+  _id: ObjectId('67454b5d8ee0dfc36826734e'),
+  nombre: 'Camisa 14',
+  categoria: 'Ropa',
+  precio: 734.86,
+  stock: 142,
+  descripcion: 'Producto de alta calidad',
+  calificacion: 3.9
+}
+{
+  _id: ObjectId('67454b5d8ee0dfc368267350'),
+  nombre: 'Libro 16',
+  categoria: 'Tecnología',
+  precio: 402.77,
+  stock: 55,
+  descripcion: 'Nuevo y mejorado',
+  calificacion: 4.9
+}
+{
+  _id: ObjectId('67454b5d8ee0dfc368267351'),
+  nombre: 'Silla 17',
+  categoria: 'Juguetes',
+  precio: 883.14,
+  stock: 101,
+  descripcion: 'Diseñado para durar',
+  calificacion: 4.7
+}
+{
+  _id: ObjectId('67454b5d8ee0dfc368267355'),
+  nombre: 'Mesa 21',
+  categoria: 'Tecnología',
+  precio: 108.21,
+  stock: 173,
+  descripcion: 'Diseñado para durar',
+  calificacion: 3.5
+}
+{
+  _id: ObjectId('67454b5d8ee0dfc368267356'),
+  nombre: 'Zapatos 22',
+  categoria: 'Muebles',
+  precio: 436.56,
+  stock: 53,
+  descripcion: 'Producto de alta calidad',
+  calificacion: 4.1
+}
+{
+  _id: ObjectId('67454b5d8ee0dfc368267357'),
+  nombre: 'Audífonos 23',
+  categoria: 'Ropa',
+  precio: 354,
+  stock: 58,
+  descripcion: 'Edición limitada',
+  calificacion: 3.9
+}
+{
+  _id: ObjectId('67454b5d8ee0dfc368267358'),
+  nombre: 'Laptop 24',
+  categoria: 'Deportes',
+  precio: 789.31,
+  stock: 54,
+  descripcion: 'Edición limitada',
+  calificacion: 3.3
+}
+{
+  _id: ObjectId('67454b5d8ee0dfc368267359'),
+  nombre: 'Pantalón 25',
+  categoria: 'Deportes',
+  precio: 834.03,
+  stock: 63,
+  descripcion: 'Nuevo y mejorado',
+  calificacion: 4.9
+}
+Type "it" for more
+db.productos.updateOne(
+    { "nombre": "Escritorio Minimalista" },
+    { $set: { "stock": 25 } }
+);
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 1,
+  modifiedCount: 1,
+  upsertedCount: 0
+}
+db.productos.updateMany(
+    { "categoria": "Muebles" },
+    { $inc: { "stock": 10 } }
+);
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 26,
+  modifiedCount: 26,
+  upsertedCount: 0
+}
+db.productos.deleteOne({ "nombre": "Lámpara LED" });
+{
+  acknowledged: true,
+  deletedCount: 1
+}
+db.productos.deleteMany({ "calificacion": { $lt: 4.0 } });
+{
+  acknowledged: true,
+  deletedCount: 50
+}
+tienda_online
